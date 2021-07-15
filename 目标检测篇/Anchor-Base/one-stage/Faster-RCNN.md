@@ -20,7 +20,7 @@
 
 ### 2. Neck：
 
-**Neck部分这里即为RPN部分，RPN网络如图1中Neck部分所示，具体如图2所示：rpn_cls_scrore、rpn_bbox_pred的大小分别为[B,N * 2,H/16,W/16],[B,N * 4,H / 16,W / 16]，N为单点anchor个数，默认为9个，H,W分别为输入的高和宽，B为batch-size大小。RPN阶段提取ROI只有正例和负例两个类别，所以分类分支的维度为2*N，同时每一个ROI需要回归中心点坐标(x,y)和宽高(w,h)，所以bbox分支维度为N *4。最终输出的proposal有scores和rois组成。**
+**Neck部分这里即为RPN部分，RPN网络如图1中Neck部分所示，具体如图2所示：rpn_cls_scrore、rpn_bbox_pred的大小分别为[B,Nx2,H/16,W/16],[B,Nx4,H/16,W/16]，N为单点anchor个数，默认为9个，H,W分别为输入的高和宽，B为batch-size大小。RPN阶段提取ROI只有正例和负例两个类别，所以分类分支的维度为2xN，同时每一个ROI需要回归中心点坐标(x,y)和宽高(w,h)，所以bbox分支维度为Nx4。最终输出的proposal有scores和rois组成。**
 
 <div align=center>
 <img src="https://note.youdao.com/yws/api/personal/file/WEBc93f137ae20ce47b809bae894147b707?method=download&shareKey=79acbbc71cb6dfd047415ab3388a0990"/>
@@ -32,7 +32,7 @@
 
 ### 3. Head：
 
-**RPN阶段刷选出rois在conv5_3层中经过ROI-Pooling操作把每一个roi提取的特征固定到形同大小(默认为7x7)，然后再把该特征分别经过分类和回归分支的全连接层输出类别和坐标。如图1中Head所示。**
+**RPN阶段刷选出rois在conv5_3层中经过ROI-Pooling操作把每一个roi提取的特征固定到相同大小(默认为7x7)，然后再把该特征分别经过分类和回归分支的全连接层输出类别和坐标。如图1中Head所示。**
 
 
 
@@ -60,7 +60,7 @@
 
 ### 6. Loss:
 
-Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分上面讨论了选取256个mini-batch的proposals，RPN部分选取前RPN_PRE_NMS_TOP_N个proposals后通过下面也选取mini-bach个proposals，mini-bach的数量由RPN_BATCHSIZE控制:
+Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分上面讨论了选取256个mini-batch的proposals，RPN部分选取前RPN_PRE_NMS_TOP_N个proposals后通过如下步骤也选取mini-bach个proposals，mini-bach的数量由RPN_BATCHSIZE控制:
 
 1. 计算前RPN_POST_NMS_TOP_N个proposal与gts的ious;
 2. iou小于RPN_NEGATIVE_OVERLAP(默认0.3)的proposal为负样本，iou大于 RPN_POSITIVE_OVERLAP(默认0.7)的proposal为正样本。需要注意的是gt与anchor最大的IOU，不 管是否大于RPN_POSITIVE_OVERLAP始终设置为正样本。其余设置为忽略样本(-1);
