@@ -12,13 +12,13 @@
 
 ## 具体实现
 
-### Backbone:
+### 1. Backbone:
 
 **作者论文实验中使用的时ZFNet和VGG，仅取16被下采样后的特征层作为最终RPN和RCNN的特征提取层。如图1中backobone所示。**
 
 
 
-### Neck：
+### 2. Neck：
 
 **Neck部分这里即为RPN部分，RPN网络如图1中Neck部分所示，具体如图2所示：rpn_cls_scrore、rpn_bbox_pred的大小分别为[B,N * 2,H/16,W/16],[B,N * 4,H / 16,W / 16]，N为单点anchor个数，默认为9个，H,W分别为输入的高和宽，B为batch-size大小。RPN阶段提取ROI只有正例和负例两个类别，所以分类分支的维度为2*N，同时每一个ROI需要回归中心点坐标(x,y)和宽高(w,h)，所以bbox分支维度为N *4。最终输出的proposal有scores和rois组成。**
 
@@ -30,21 +30,18 @@
 
 
 
-### Head：
+### 3. Head：
 
 **RPN阶段刷选出rois在conv5_3层中经过ROI-Pooling操作把每一个roi提取的特征固定到形同大小(默认为7x7)，然后再把该特征分别经过分类和回归分支的全连接层输出类别和坐标。如图1中Head所示。**
 
 
 
-### Sample Assignment:
+### 4. Sample Assignment:
 
 - **rpn sample assignment**
   1. 对rpn proposal的scores进行排序，选取前RPN_PRE_NMS_TOP_N个，一般默认RPN_PRE_NMS_TOP_N为12000;
   2. 对前RPN_PRE_NMS_TOP_N个proposal进行nms，nms阈值为RPN_NMS_THRESH（默认为0.7);
   3. 选取nms后的前RPN_POST_NMS_TOP_N（默认为2000）个proposal;
-  4. 计算前RPN_POST_NMS_TOP_N个proposal与gts的ious;
-  5. iou小于RPN_NEGATIVE_OVERLAP(默认0.3)的proposal为负样本，iou大于 RPN_POSITIVE_OVERLAP(默认0.7)的proposal为正样本。需要注意的是gt与anchor最大的IOU，不 管是否大于RPN_POSITIVE_OVERLAP始终设置为正样本。其余设置为忽略样本(-1);
-  6. 选择正负样本个数，由RPN_FG_FRACTION和RPN_BATCHSIZE两个变量控制，RPN_FG_FRACTION是负样本比例默认0.5,RPN_BATCHSIZE为该批次正负样本个数，默认为256。正负样本最大个数为128，当正样本大于128时，随机选取128个正样本，负样本个数始终为RPN_BATCHSIZE-实际正样本个数。
 - **rcnn sample assignment**
   1. 计算2000个proposals+gts（后面还是用proposals表示）与所有gts的ious
   2. 找出每个proposal与哪个gt的iou最大，并记录其iou值，如果iou值大于FG_THRESH(默认为0.5)，则设置该proposal为正样本。
@@ -53,15 +50,46 @@
 
 
 
-### Decode
+### 5. Decode:
 
-1. 宽高编码
+$$
+\begin{aligned}
+t_{\mathrm{x}} &=\left(x-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}=\left(y-y_{\mathrm{a}}\right) / h_{\mathrm{a}} \\
+t_{\mathrm{w}} &=\log \left(w / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}=\log \left(h / h_{\mathrm{a}}\right) \\
+t_{\mathrm{x}}^{*} &=\left(x^{*}-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}^{*}=\left(y^{*}-y_{\mathrm{a}}\right) / h_{\mathrm{a}} \\
+t_{\mathrm{w}}^{*} &=\log \left(w^{*} / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}^{*}=\log \left(h^{*} / h_{\mathrm{a}}\right)
+\end{aligned}
+$$
 
-   ```math
-   \begin{aligned}
-   t_{\mathrm{x}} &=\left(x-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}=\left(y-y_{\mathrm{a}}\right) / h_{\mathrm{a}} \\
-   t_{\mathrm{w}} &=\log \left(w / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}=\log \left(h / h_{\mathrm{a}}\right) \\
-   t_{\mathrm{x}}^{*} &=\left(x^{*}-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}^{*}=\left(y^{*}-y_{\mathrm{a}}\right) / h_{\mathrm{a}} \\
-   t_{\mathrm{w}}^{*} &=\log \left(w^{*} / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}^{*}=\log \left(h^{*} / h_{\mathrm{a}}\right)
-   \end{aligned}
-   ```
+$$
+(x,y)、(x_{a},y_{a})、(x^*,y^*)分别表示预测点的中心坐标，anchor的中心点坐标，gt的中心点坐标\\
+(w,h)、(w_{a},h_{a})、(w^*,h^*)分别表示预测点的宽高，anchor的宽高，gt的宽高
+$$
+
+从该编码方式来看，编码后的值被压缩有助于网络快速收敛。
+
+### 6. Loss:
+
+Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分上面讨论了选取256个mini-batch的proposals，RPN部分选取前RPN_PRE_NMS_TOP_N个proposals后通过下面也选取mini-bach个proposals，mini-bach的数量由RPN_BATCHSIZE控制:
+
+1. 计算前RPN_POST_NMS_TOP_N个proposal与gts的ious;
+2. iou小于RPN_NEGATIVE_OVERLAP(默认0.3)的proposal为负样本，iou大于 RPN_POSITIVE_OVERLAP(默认0.7)的proposal为正样本。需要注意的是gt与anchor最大的IOU，不 管是否大于RPN_POSITIVE_OVERLAP始终设置为正样本。其余设置为忽略样本(-1);
+3. 选择正负样本个数，由RPN_FG_FRACTION和RPN_BATCHSIZE两个变量控制，RPN_FG_FRACTION是负样本比例默认0.5,RPN_BATCHSIZE为该批次正负样本个数，默认为256。正负样本最大个数为128，当正样本大于128时，随机选取128个正样本，负样本个数始终为RPN_BATCHSIZE-实际正样本个数。
+
+两部分的Loss公式为:
+$$
+L ( \{ p _ { i } \} \{ t _ { i } \} ) = \frac { 1 } { N _ { c l s } } \sum _ { i } L _ { c l s } ( p _ { i } p _ { i } ^ { * } ) + \lambda \frac { 1 } { N _ { r e g } } \sum _ { i } p _ { i } ^ { * } L _ { r e g } ( t _ { i } t _ { i } ^ { * } )
+$$
+
+$$
+p_{i},t_{i}分别是预测的类别和位置\\
+p^{*}_{i},t^{*}_{i}分别是预测的类别和位置，p^{*}_{i}为one-hot标签\\
+N_{cls}为mini-batch大小，默认为256，N_{reg}为总anchosr个数，默认为2400，假设输入224,ancor为9，则特征图大小为14，总anchors=14*14*8约为2400\\
+\lambda为10
+$$
+
+**分类loss用的交叉熵loss，回归loss用的smooth-L1 loss。**
+
+### 7. 总结
+
+Faster-RCNN的作者从RCNN,Fast-RCNN一步一个脚印，做的工作非常扎实，RPN的提出使得网络能够完全以end-to-end的方式进行训练，anchor的提出为后来anchor-base系列的目标检测奠定了基础。现在各种主干网络，loss，FPN等提出使得Faster-RCNN在原来基础上又能够有一个很大的进步。
