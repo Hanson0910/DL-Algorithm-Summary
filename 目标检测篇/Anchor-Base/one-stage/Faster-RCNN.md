@@ -20,7 +20,7 @@
 
 ### 2. Neck：
 
-**Neck部分这里即为RPN部分，RPN网络如图1中Neck部分所示，具体如图2所示：rpn_cls_scrore、rpn_bbox_pred的大小分别为[B,N * 2,H/16,W/16],[B,N * 4,H / 16,W / 16]，N为单点anchor个数，默认为9个，H,W分别为输入的高和宽，B为batch-size大小。RPN阶段提取ROI只有正例和负例两个类别，所以分类分支的维度为2*N，同时每一个ROI需要回归中心点坐标(x,y)和宽高(w,h)，所以bbox分支维度为N *4。最终输出的proposal有scores和rois组成。**
+**Neck部分这里即为RPN部分，RPN网络如图1中Neck部分所示，具体如图2所示：rpn_cls_scrore、rpn_bbox_pred的大小分别为[B,N * 2,H/16,W/16],[B,N * 4,H / 16,W / 16]，N为单点anchor个数，默认为9个，H,W分别为输入的高和宽，B为batch-size大小。RPN阶段提取ROI只有正例和负例两个类别，所以分类分支的维度为2*N，同时每一个ROI需要回归中心点坐标(x,y)和宽高(w,h)，所以bbox分支维度为N *4。最终输出的proposal有scores和rois组成**
 
 <div align=center>
 <img src="https://note.youdao.com/yws/api/personal/file/WEBc93f137ae20ce47b809bae894147b707?method=download&shareKey=79acbbc71cb6dfd047415ab3388a0990"/>
