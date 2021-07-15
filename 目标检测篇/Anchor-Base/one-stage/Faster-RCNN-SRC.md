@@ -52,9 +52,19 @@
 
 ### 5. Decode:
 
-<div align=center>
-<img src="https://note.youdao.com/yws/api/personal/file/WEBbd29d7a9fc1366d5526dc1a49fb87928?method=download&shareKey=2c4a6940abd2a04648becf90d0f0e4f0"/>
-</div>
+$$
+\begin{aligned}
+t_{\mathrm{x}} &=\left(x-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}=\left(y-y_{\mathrm{a}}\right) / h_{\mathrm{a}} \\
+t_{\mathrm{w}} &=\log \left(w / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}=\log \left(h / h_{\mathrm{a}}\right) \\
+t_{\mathrm{x}}^{*} &=\left(x^{*}-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}^{*}=\left(y^{*}-y_{\mathrm{a}}\right) / h_{\mathrm{a}} \\
+t_{\mathrm{w}}^{*} &=\log \left(w^{*} / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}^{*}=\log \left(h^{*} / h_{\mathrm{a}}\right)
+\end{aligned}
+$$
+
+$$
+(x,y)、(x_{a},y_{a})、(x^*,y^*)分别表示预测点的中心坐标，anchor的中心点坐标，gt的中心点坐标\\
+(w,h)、(w_{a},h_{a})、(w^*,h^*)分别表示预测点的宽高，anchor的宽高，gt的宽高
+$$
 
 从该编码方式来看，编码后的值被压缩有助于网络快速收敛。
 
@@ -67,10 +77,16 @@ Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分�
 3. 选择正负样本个数，由RPN_FG_FRACTION和RPN_BATCHSIZE两个变量控制，RPN_FG_FRACTION是负样本比例默认0.5,RPN_BATCHSIZE为该批次正负样本个数，默认为256。正负样本最大个数为128，当正样本大于128时，随机选取128个正样本，负样本个数始终为RPN_BATCHSIZE-实际正样本个数。
 
 两部分的Loss公式为:
+$$
+L ( \{ p _ { i } \} \{ t _ { i } \} ) = \frac { 1 } { N _ { c l s } } \sum _ { i } L _ { c l s } ( p _ { i } p _ { i } ^ { * } ) + \lambda \frac { 1 } { N _ { r e g } } \sum _ { i } p _ { i } ^ { * } L _ { r e g } ( t _ { i } t _ { i } ^ { * } )
+$$
 
-<div align=center>
-<img src="https://note.youdao.com/yws/api/personal/file/WEB41697d7dbc87f275135cf40b079cd4e1?method=download&shareKey=709e7d57c2c7b1012ad9f898fa19cef4"/>
-</div>
+$$
+p_{i},t_{i}分别是预测的类别和位置\\
+p^{*}_{i},t^{*}_{i}分别是预测的类别和位置，p^{*}_{i}为one-hot标签\\
+N_{cls}为mini-batch大小，默认为256，N_{reg}为总anchosr个数，默认为2400，假设输入224,ancor为9，则特征图大小为14，总anchors=14*14*8约为2400\\
+\lambda为10
+$$
 
 **分类loss用的交叉熵loss，回归loss用的smooth-L1 loss。**
 
