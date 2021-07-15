@@ -60,7 +60,7 @@
 
 ### 6. Loss:
 
-Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分上面讨论了选取256个mini-batch的proposals，RPN部分选取前RPN_PRE_NMS_TOP_N个proposals后通过下面也选取mini-bach个proposals，mini-bach的数量由RPN_BATCHSIZE控制:
+Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分上面讨论了选取256个mini-batch的proposals，RPN部分选取前RPN_PRE_NMS_TOP_N个proposals后通过如下步骤也选取mini-bach个proposals，mini-bach的数量由RPN_BATCHSIZE控制:
 
 1. 计算前RPN_POST_NMS_TOP_N个proposal与gts的ious;
 2. iou小于RPN_NEGATIVE_OVERLAP(默认0.3)的proposal为负样本，iou大于 RPN_POSITIVE_OVERLAP(默认0.7)的proposal为正样本。需要注意的是gt与anchor最大的IOU，不 管是否大于RPN_POSITIVE_OVERLAP始终设置为正样本。其余设置为忽略样本(-1);
