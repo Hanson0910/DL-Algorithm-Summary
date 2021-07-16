@@ -37,7 +37,7 @@
 2. [优化器，优化器就像灯塔指引网络往正确的方向收敛，一个好的优化器能够帮助网络快速收敛，跳出局部最优，训练过程更加稳定](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E4%BC%98%E5%8C%96%E7%AF%87/%E4%BC%98%E5%8C%96%E5%99%A8.md)
 3. [激活函数，激活函数能为网络增加非线性使网络有更好的拟合能力](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E4%BC%98%E5%8C%96%E7%AF%87/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.md)
 
-# 禁赛篇
+# 竞赛篇
 1. [Kaggle 木薯叶疾病识别银牌，top1% 29/3900](https://www.kaggle.com/c/cassava-leaf-disease-classification)
 2. [Kaggle 化学结构式翻译，top4% 30/874](https://www.kaggle.com/c/bms-molecular-translation)
 3. [Kaggle shopee商品识别银牌，top5%,118/2426](https://www.kaggle.com/c/shopee-product-matching)
