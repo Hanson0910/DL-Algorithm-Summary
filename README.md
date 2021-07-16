@@ -1,7 +1,7 @@
 # DL-Algorithm-Summary
 **该仓库记录本人平时阅读一些论文和方法的总结，也为了督促自己多学习多分享，有些内容也会同步分享到[知乎](https://www.zhihu.com/people/feng-yi-54-69/posts)。具体内容可点击readme下的超链接查看，链接中有些图片外链可能需要较长加载时间。**
 
-# - 目标检测篇
+# 目标检测篇
 ## Anchor-Base
 
 ### two-stage
