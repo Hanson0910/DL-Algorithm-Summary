@@ -50,4 +50,6 @@
 4. [Kaggle 导管放置位置识别铜牌,top6%,99/1547](https://www.kaggle.com/c/ranzcr-clip-catheter-line-classification)
 #### else
 1. [ISBI-2021 RIADD 视网膜疾病分类第一名](https://riadd.grand-challenge.org/evaluation/challenge/leaderboard/)
-
+<div align=center>
+<img src="https://github.com/Hanson0910/Pytorch-RIADD/blob/main/show-img/show-img.png"/>
+</div>
