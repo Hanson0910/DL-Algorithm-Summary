@@ -21,7 +21,7 @@
 **RetinaNet以ResNet为Backbone**
 
 <div align=center>
-<img src="https://pic1.zhimg.com/80/v2-4c40148cd684b26b7fcade1ea018af7c_720w.jpg"/>.
+<img src="https://pic1.zhimg.com/80/v2-4c40148cd684b26b7fcade1ea018af7c_720w.jpg"/>
 </div>
 
 **图2**
