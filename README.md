@@ -17,6 +17,7 @@
 ## Anchor-Free
 
 ### Key-Point
+1. [Yolo,Yolo没有复杂的检测流程，只需要将图像输入到神经网络就可以得到检测结果，YOLO可以非常快的完成物体检测任务]
 
 ### Anchor-Point
 
