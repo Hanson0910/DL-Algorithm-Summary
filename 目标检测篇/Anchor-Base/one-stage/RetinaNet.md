@@ -40,7 +40,7 @@
 
 ### 2.4. Sample Assignment:
 
-**RetinaNet的Sample Assignment跟SSD方式，参考[SSD Sample Assignment](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/SSD.md)**
+**RetinaNet的Sample Assignment把iou < 0.4作为负样本， > 0.5作为正样本，其余为难例忽略。**
 
 
 
