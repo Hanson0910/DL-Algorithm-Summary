@@ -36,14 +36,18 @@
     所以优化的时候按交叉熵来优化即可。
 
 - **求导**
-    
+  
     <div align=center>
     <img src="https://note.youdao.com/yws/api/personal/file/WEB58f679cdda0c6d980b6061aa2d3605c5?method=download&shareKey=6def5966c6ae6ac11c80a0aa0df0c502"/>
+    </div>
+    
+    <div align=center>
+    <img src="https://note.youdao.com/yws/api/personal/file/WEBecf8c8b46adf066b1ad6d7af3551eda8?method=download&shareKey=c4e86c520003b76da19706dbe2a2c753"/>
     </div>
     
 - **注意点**
 
     <div align=center>
-    <img src="https://note.youdao.com/yws/api/personal/file/WEBecf8c8b46adf066b1ad6d7af3551eda8?method=download&shareKey=c4e86c520003b76da19706dbe2a2c753"/>
+    <img src="https://note.youdao.com/yws/api/personal/file/WEBd1606f00dd274a37853c99cee3c42612?method=download&shareKey=02eee18c45f3ef900a3cec81a2060bfb"/>
     </div>
 
