@@ -37,7 +37,7 @@
 # Loss篇
 
 ## 分类Loss
-1. [交叉熵Loss，多分类任务中通常用到交叉熵Loss作为代价函数，分类交叉熵损失求导更简单，损失仅与正确类别的概率有关]()
+1. [交叉熵Loss，多分类任务中通常用到交叉熵Loss作为代价函数，分类交叉熵损失求导更简单，损失仅与正确类别的概率有关](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%88%86%E7%B1%BBloss%20-SRC.md)
 # 优化篇
 
 1. [正则项,加入正则项能有效避免模型过拟合同时使模型更加稀疏](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E4%BC%98%E5%8C%96%E7%AF%87/%E6%AD%A3%E5%88%99%E9%A1%B9.md)
