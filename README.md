@@ -1,5 +1,5 @@
 # DL-Algorithm-Summary
-**该仓库记录本人平时阅读一些论文和方法的总结，也为了督促自己多学习多分享，有些内容也会同步分享到[知乎](https://www.zhihu.com/people/feng-yi-54-69/posts)。具体内容可点击readme下的超链接查看，链接中有些图片外链可能需要较长加载时间。**
+**该仓库记录本人平时阅读一些论文和方法的总结，也为了督促自己多学习多分享，有些内容也会同步分享到[知乎](https://www.zhihu.com/people/feng-yi-54-69/posts),所以有些链接直接链到我的知乎账号。具体内容可点击readme下的超链接查看，链接中有些图片外链可能需要较长加载时间。如果有兴趣一起完善这个仓库可以联系我！！！**
 
 # 目标检测篇
 ## Anchor-Base
@@ -30,6 +30,10 @@
 3. [FCOS,FCOS基于FCN的逐像素目标检测算法，实现了无锚点（anchor-free）、无提议（proposal free）的解决方案，并且提出了中心度（Center—ness）的思想，同时在召回率等方面表现接近甚至超过目前很多先进主流的基于锚框目标检测算法](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Anchor-Point/FCOS.md)
 4. [Soft Anchor-Point Object Detection, 实例在不同特征层都会有相应只是响应的大小不一样，所以用了一个软标签使得正样本在不同特征层之间都有一定的梯度回传](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Anchor-Point/Soft%20Anchor-Point%20Object%20Detection.md)
 5. [YOLOX,YOLOX在YOLO的基础上把cls,pbj,box分支解耦开来，同时采用anchor-free的框架并简化OTA提出SimOTA加快训练时间](https://zhuanlan.zhihu.com/p/395554928)
+
+## 插件式
+1. [Dynamic Head: Unifying Object Detection Heads with Attentions,这是微软发表关于目标检测的论文,可以作为一个插件集成到现有目标检测框架中：One-Stage; Two-Stage; Anchor Base; Anchor Free,Dynamic Head主要解决目标检测的三个问题（我觉得第三个有点牵强）：尺度感知、空间感知、任务感知](https://zhuanlan.zhihu.com/p/381481382)
+
 
 ## 数据集
 1. [MS-COCO](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/%E6%95%B0%E6%8D%AE%E9%9B%86/ms-coco.md)
