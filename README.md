@@ -8,7 +8,7 @@
 
 1. [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks，在Fast-RCNN基础上设计RPN层替换选来的selective search方式生成ROI，达到真正的end-to-end的训练方式](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Faster-RCNN.md)
 2. [R-FCN在Faster-RCNN的基础上提出position-sensitive RoI pooling layer，不需要每一个roi单独提取特征再进行全连接操作进行分类和回归，R-FCN是全  	卷积网络能够提升训练和测试阶段的检测速度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/R-FCN.md)
-3. [Double-Head RCNN：Rethinking Classifification and Localization for Object Detection,c层对全局空间信息掌握的更好，卷积能够对局部位置信息掌握更好，作者利用这个发现分别用fc和conv来进行分类和回归。然后提出混合任务，fc层再回归框，conv层再进行分类进行辅助互补](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Double-Head-RCNN.md)
+3. [Double-Head RCNN：Rethinking Classifification and Localization for Object Detection,fc层对全局空间信息掌握的更好，卷积能够对局部位置信息掌握更好，作者利用这个发现分别用fc和conv来进行分类和回归。然后提出混合任务，fc层再回归框，conv层再进行分类进行辅助互补](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Double-Head-RCNN.md)
 
   ### ont-stage
 1. [SSD:Single Shot MultiBox Detector,，通过特征金字塔能够检测不同大小的目标，没有RPN步骤，采用全卷积的方式能够极大提升检测速度。使用hard_negative_mining可以有效解决正负样本不均很的问题，同时加速收敛速度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/SSD.md)
@@ -16,7 +16,7 @@
 3. [EfficientDet,EfficientDet采用BIFPN结构在替身检测速度的同时增加检测精度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/EfficientDet.md)
 4. [yolo4,采用CSP模块能够有效减小网络计算量](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/Yolo4.md)
 5. [yolo5,采用首先采用了focus层，然后设计了两种CSP结构，能够进一步减小网络计算量](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/Yolo5.md)
-6. [Gradient Harmonized Single-stage Detector,分析了单阶段目标检测中的样本不均衡问题，通过梯度分布来动态为不同样本分配不同的梯度。这样原本分类中占据大量梯度的负例和easy-sample就会减少它们的梯度，占据少量的very-hard sample虽然样本比较少，但是却单个梯度很大，这样也会减小它们的梯度，medium-sample就会相对增加梯度。针对回归提出了改进版的smootl-l1 loss使得在d大于阈值的时候个样本梯度范数不再统一是1，能够反映不同样本的重要程度，同时针对性提出GHM-R Loss来较小very-hard sample的影响](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/GHM.md)
+6. [Gradient Harmonized Single-stage Detector,分析了单阶段目标检测中的样本不均衡问题，通过梯度分布来动态为不同样本分配不同的梯度。这样原本分类中占据大量梯度的负例和easy-sample就会减少它们的梯度，占据少量的very-hard sample虽然样本比较少，但是却单个梯度很大，这样也会减小它们的梯度，medium-sample就会相对增加梯度。针对回归提出了改进版的smootl-l1 loss使得在预测值和gt差值大于阈值的时候个样本梯度范数不再统一是1，能够反映不同样本的重要程度，同时针对性提出GHM-R Loss来较小very-hard sample的影响](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/GHM.md)
 
 ## Anchor-Free
 
