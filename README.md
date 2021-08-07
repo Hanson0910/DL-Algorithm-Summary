@@ -8,6 +8,7 @@
 
 1. [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks，在Fast-RCNN基础上设计RPN层替换选来的selective search方式生成ROI，达到真正的end-to-end的训练方式](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Faster-RCNN.md)
 2. [R-FCN在Faster-RCNN的基础上提出position-sensitive RoI pooling layer，不需要每一个roi单独提取特征再进行全连接操作进行分类和回归，R-FCN是全  	卷积网络能够提升训练和测试阶段的检测速度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/R-FCN.md)
+3. [Double-Head RCNN：Rethinking Classifification and Localization for Object Detection,c层对全局空间信息掌握的更好，卷积能够对局部位置信息掌握更好，作者利用这个发现分别用fc和conv来进行分类和回归。然后提出混合任务，fc层再回归框，conv层再进行分类进行辅助互补](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Double-Head-RCNN.md)
 
   ### ont-stage
 1. [SSD:Single Shot MultiBox Detector,，通过特征金字塔能够检测不同大小的目标，没有RPN步骤，采用全卷积的方式能够极大提升检测速度。使用hard_negative_mining可以有效解决正负样本不均很的问题，同时加速收敛速度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/SSD.md)
@@ -15,6 +16,7 @@
 3. [EfficientDet,EfficientDet采用BIFPN结构在替身检测速度的同时增加检测精度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/EfficientDet.md)
 4. [yolo4,采用CSP模块能够有效减小网络计算量](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/Yolo4.md)
 5. [yolo5,采用首先采用了focus层，然后设计了两种CSP结构，能够进一步减小网络计算量](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/Yolo5.md)
+6. [Gradient Harmonized Single-stage Detector,分析了单阶段目标检测中的样本不均衡问题，通过梯度分布来动态为不同样本分配不同的梯度。这样原本分类中占据大量梯度的负例和easy-sample就会减少它们的梯度，占据少量的very-hard sample虽然样本比较少，但是却单个梯度很大，这样也会减小它们的梯度，medium-sample就会相对增加梯度。针对回归提出了改进版的smootl-l1 loss使得在d大于阈值的时候个样本梯度范数不再统一是1，能够反映不同样本的重要程度，同时针对性提出GHM-R Loss来较小very-hard sample的影响](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/GHM.md)
 
 ## Anchor-Free
 
@@ -50,6 +52,7 @@
 ## 分类Loss
 1. [交叉熵Loss，多分类任务中通常用到交叉熵Loss作为代价函数，分类交叉熵损失求导更简单，损失仅与正确类别的概率有关](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%88%86%E7%B1%BBloss.md)
 2. [Focal-Loss，Focal-Loss能够更加关注难例](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%88%86%E7%B1%BBloss.md)
+3. [Gradient Harmonized Single-stage Detector,分析了单阶段目标检测中的样本不均衡问题，通过梯度分布来动态为不同样本分配不同的梯度。这样原本分类中占据大量梯度的负例和easy-sample就会减少它们的梯度，占据少量的very-hard sample虽然样本比较少，但是却单个梯度很大，这样也会减小它们的梯度，medium-sample就会相对增加梯度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/GHM.md)
 
 ## 回归Loss
 1. [L1 Loss, 不论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，对离群点不敏感，具有较为稳健性的解](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.md)
@@ -59,6 +62,8 @@
 5. [GIOU Loss,预测值和 gt 不重叠时也可以优化,可以分辨不同的重叠方式](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.md)
 6. [DIOU Loss,直接最小化预测框与目标框之间的归一化距离，以达到更快的收敛速度。](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.md)
 7. [CIOU Loss, 可以在DIOU Loss基础上回归宽高比差异](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.md)
+8.  [Gradient Harmonized Single-stage Detector,提出改进Smooth-L1 Loss，使得smootl-l1 loss使得在预测与gt差值大于阈值的时候单个样本梯度范数不再统一是1，能够反映不同样本的重要程度，同时针对性提出GHM-R Loss来较小very-hard sample的影响。](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/GHM.md)
+
 # 优化篇
 
 1. [正则项,加入正则项能有效避免模型过拟合同时使模型更加稀疏](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E4%BC%98%E5%8C%96%E7%AF%87/%E6%AD%A3%E5%88%99%E9%A1%B9.md)
