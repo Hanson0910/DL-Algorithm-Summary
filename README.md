@@ -47,6 +47,9 @@
 ### 评测方式
 1. [mAP](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/%E8%AF%84%E6%B5%8B%E6%8C%87%E6%A0%87/mAP.md)
 
+# 目标跟踪篇
+
+1. [RetinaTrack: Online Single Stage Joint Detection and Tracking，RetinaTrack主要解决检测区域高度重叠的时候导致实例特征混淆，从而在RetinaNet基础上对每一个anchor用一个单独的分支去负责预测，Task-Shared和Task-Specfic部分主要是为了在减小模型参数量的基础上提升多任务学习的精度](https://zhuanlan.zhihu.com/p/269571970)
 
 # Loss篇
 
@@ -88,3 +91,9 @@
 <div align=center>
 <img src="https://github.com/Hanson0910/Pytorch-RIADD/blob/main/show-img/show-img.png" width = "960" height = "480" />
 </div>
+
+# 工程引用篇
+
+1. [轻量级人脸检测MNN模型部署](https://github.com/Hanson0910/MNNFaceDetect)
+2. [libtorch多batch inference](https://zhuanlan.zhihu.com/p/386108526)
+
