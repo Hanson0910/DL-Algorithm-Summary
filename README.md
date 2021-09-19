@@ -92,7 +92,7 @@
 <img src="https://github.com/Hanson0910/Pytorch-RIADD/blob/main/show-img/show-img.png" width = "960" height = "480" />
 </div>
 
-# 工程引用篇
+# 工程应用篇
 
 1. [轻量级人脸检测MNN模型部署](https://github.com/Hanson0910/MNNFaceDetect)
 2. [libtorch多batch inference](https://zhuanlan.zhihu.com/p/386108526)
