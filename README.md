@@ -90,7 +90,7 @@
 #### else
 1. [ISBI-2021 RIADD 视网膜疾病分类第一名](https://riadd.grand-challenge.org/evaluation/challenge/leaderboard/)
 <div align=center>
-<img src="https://github.com/Hanson0910/Pytorch-RIADD/blob/main/show-img/show-img.png" width = "960" height = "480" />
+<img src="https://github.com/Hanson0910/Pytorch-RIADD/blob/main/show-img/show-img.png" width = "480" height = "240" />
 </div>
 
 # 工程应用篇
