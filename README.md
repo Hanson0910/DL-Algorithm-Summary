@@ -97,4 +97,5 @@
 
 1. [轻量级人脸检测MNN模型部署](https://github.com/Hanson0910/MNNFaceDetect)
 2. [libtorch多batch inference](https://zhuanlan.zhihu.com/p/386108526)
+3. [关键点匹配算法SuperGlue MNN C++部署](https://github.com/Hanson0910/MNNSuperGlue)
 
