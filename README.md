@@ -61,15 +61,6 @@
 ## 语义分割
 
 
-
-=======
-# 分割篇
-
-## 实例分割
-1.[Mask R-CNN是在faster RCNN基础上添加mask分支，同时提出ROI-Align来消除ROI-Pooling的量化误差，并添加FPN结构大大提升效果](https://github.com/Hanson0910/DL-Algorithm-Summary/tree/main/%E5%88%86%E5%89%B2%E7%AF%87/%E5%AE%9E%E4%BE%8B%E5%88%86%E5%89%B2)
-
-
->>>>>>> 703315f53103c8200f3695fa9aaad3acbec7ae51
 # 目标跟踪篇
 
 1. [RetinaTrack: Online Single Stage Joint Detection and Tracking，RetinaTrack主要解决检测区域高度重叠的时候导致实例特征混淆，从而在RetinaNet基础上对每一个anchor用一个单独的分支去负责预测，Task-Shared和Task-Specfic部分主要是为了在减小模型参数量的基础上提升多任务学习的精度](https://zhuanlan.zhihu.com/p/269571970)
