@@ -47,7 +47,6 @@
 ### 评测方式
 1. [mAP](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/%E8%AF%84%E6%B5%8B%E6%8C%87%E6%A0%87/mAP.md)
 
-<<<<<<< HEAD
 
 
 # 分割篇
@@ -59,6 +58,7 @@
 
 
 ## 语义分割
+
 
 
 # 目标跟踪篇
