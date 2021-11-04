@@ -10,6 +10,7 @@
 2. [R-FCN在Faster-RCNN的基础上提出position-sensitive RoI pooling layer，不需要每一个roi单独提取特征再进行全连接操作进行分类和回归，R-FCN是全  	卷积网络能够提升训练和测试阶段的检测速度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/R-FCN.md)
 3. [Double-Head RCNN：Rethinking Classifification and Localization for Object Detection,fc层对全局空间信息掌握的更好，卷积能够对局部位置信息掌握更好，作者利用这个发现分别用fc和conv来进行分类和回归。然后提出混合任务，fc层再回归框，conv层再进行分类进行辅助互补](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Double-Head-RCNN.md)
 4. [Cascade R-CNN通过级联的方式一级一级筛选出高质量的proposal,提升train和inference的精度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Cascade-RCNN.md)
+5. [Libra R-CNN现有two-satge检测框架得问题分别从样本层面、特征层面和目标层面出发，提出IOU-balanced sampling，balanced feature pytamid，balanced L1 loss。主要解决选取高质量样本、更加有效融合mult-stage特征和更加关注难例的学习](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/Libra%20R-CNN.md)
 
   ### ont-stage
 1. [SSD:Single Shot MultiBox Detector,，通过特征金字塔能够检测不同大小的目标，没有RPN步骤，采用全卷积的方式能够极大提升检测速度。使用hard_negative_mining可以有效解决正负样本不均很的问题，同时加速收敛速度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/one-stage/SSD.md)
