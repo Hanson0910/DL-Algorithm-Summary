@@ -41,7 +41,7 @@
 1. [Dynamic Head: Unifying Object Detection Heads with Attentions,这是微软发表关于目标检测的论文,可以作为一个插件集成到现有目标检测框架中：One-Stage; Two-Stage; Anchor Base; Anchor Free,Dynamic Head主要解决目标检测的三个问题（我觉得第三个有点牵强）：尺度感知、空间感知、任务感知](https://zhuanlan.zhihu.com/p/381481382)
 2. [Generalized Focal Loss:Learning Qualified andDistributed Bounding Boxes for Dense Object Detection,文章提出Quality Focal Loss，通过软化标签用IOU值替换one-hot标签，再利用focal-loss的形式组成分类loss；Distribution Focal Loss还是没有理解透彻，大致是围绕坐标标签定义一个离散空间，然后把这个离散空间通过softmax函数表示每个离散空间可能是坐标的概率，同事为了加快收敛速度只计算坐标左右两点的loss。](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/Generalized%20Focal%20Loss.md)
 3. [FreeAnchor: Learning to Match Anchors for Visual Object Detection,FreeAnchor从极大释然估计的角度出发设计优化方式，使得网络能够以一个更加灵活的方式去选择目标匹配的anchor。不同于guide-anchor从网络设计出发，FreeAnchor从优化方式出发，利用巧妙的数学技巧达到anchor自适应object的目的](https://zhuanlan.zhihu.com/p/433873412)
-4. [https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/ATSS-SRC.md](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/ATSS-SRC.md)
+4. [ATSS通过对比试验发现造成anchor-base和anchor-free精度最大的区别是在正负样本选择上，进而通过分析目标统计学特征提出自动选择正负样本的方法，可以大幅提升检测精度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/ATSS-SRC.md)
 
 
 ## 数据集
