@@ -27,7 +27,7 @@
 2. [Yolo,Yolo没有复杂的检测流程，只需要将图像输入到神经网络就可以得到检测结果，YOLO可以非常快的完成物体检测任务](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/Yolo.md)
 3. [CornerNer,将目标检测问题看作关键点回归问题，通过检测目标框的左上角和右下角两个关键点得到预测框。整个检测网络的训练是从头开始的，并不基于预训练的分类模型，这使得用户能够自由设计特征提取网络，不用受预训练模型的限制](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/CornerNet.md)
 4. [RepPoints使用一个完全anchor-free的检测框架，通过deformable-conv预测9组点来代表目标的重点区域，再通过这9组点生成伪box进行回归。RepPoints达到了真正的anchor-free，整个检测框架十分简洁，超参少。](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/RepPoints-SRC.md)
-5. [FoveaBox也是一个anchor-free的key-point检测框架，通过预测类别eatmap作为目标概率图，然后再回归中心点偏置。与FCOS等其它anchor-free检测框架的区别是它把目标邻接FPN level也作为正样本，同时它在定义positive area的时候并没有像其它框架一样定义ignore area](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/FoveaBox.md)
+5. [ATSS通过对比试验发现造成anchor-base和anchor-free精度最大的区别是在正负样本选择上，进而通过分析目标统计学特征提出自动选择正负样本的方法，可以大幅提升检测精度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/FoveaBox.md)
 
 
 ### Center-Point
