@@ -43,6 +43,7 @@
 2. [Generalized Focal Loss:Learning Qualified andDistributed Bounding Boxes for Dense Object Detection,文章提出Quality Focal Loss，通过软化标签用IOU值替换one-hot标签，再利用focal-loss的形式组成分类loss；Distribution Focal Loss还是没有理解透彻，大致是围绕坐标标签定义一个离散空间，然后把这个离散空间通过softmax函数表示每个离散空间可能是坐标的概率，同事为了加快收敛速度只计算坐标左右两点的loss。](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/loss%E7%AF%87/Generalized%20Focal%20Loss.md)
 3. [FreeAnchor: Learning to Match Anchors for Visual Object Detection,FreeAnchor从极大释然估计的角度出发设计优化方式，使得网络能够以一个更加灵活的方式去选择目标匹配的anchor。不同于guide-anchor从网络设计出发，FreeAnchor从优化方式出发，利用巧妙的数学技巧达到anchor自适应object的目的](https://zhuanlan.zhihu.com/p/433873412)
 4. [ATSS通过对比试验发现造成anchor-base和anchor-free精度最大的区别是在正负样本选择上，进而通过分析目标统计学特征提出自动选择正负样本的方法，可以大幅提升检测精度](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Free/Key-Point/ATSS-SRC.md)
+5. [CARAFE,Content-Aware ReAssembly of FEatures，这是一篇关于特征上采样的文章，其实不应该放在目标检测上，可以用在分割等其它任务中，这篇文章我觉得故事成的成分很大，分析了传统插值和deconvolution的缺点，认为传统插值精度不好，deconvolution比较费时，为此提出了一种新的上采样策略](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/Anchor-Base/two-stage/CARAFE-SRC.md)
 
 
 ## 数据集
