@@ -58,6 +58,10 @@
 
 
 
+# 网络篇
+1. [GCNet通过分析No-Local(Non-local Neural Networks)网络，实现发现No-Local网络用了大量的计算量来建立的特征长程关系，但是却发现通过No-local网络来建模的全局语义信息在不同的点上几乎是相同的。对于这一现象，作者进行了改进](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%BD%91%E7%BB%9C%E7%AF%87/GCNet.md)
+
+
 # 分割篇
 
 ## 实例分割
