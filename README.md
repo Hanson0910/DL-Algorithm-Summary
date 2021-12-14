@@ -57,6 +57,10 @@
 1. [mAP](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AF%87/%E8%AF%84%E6%B5%8B%E6%8C%87%E6%A0%87/mAP.md)
 
 
+#分类篇
+1. [目标分类过程中的长尾效应是一个很常见的问题，这篇文章通过试验发现类别较多的类特征权重值要大一些，类别较少的特征权重值要小一些。基于以上发现作责提出了一种特征归一化的方式来解决长尾效应问题](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E5%88%86%E7%B1%BB%E7%AF%87/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94/DECOUPLING%20REPRESENTATION%20AND%20CLASSIFIER.md)
+2. [这篇文章针对分类问题中的长尾效应设计了一个双分支网络，两份分支共享权重，但是输入的数据的分布相反](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E5%88%86%E7%B1%BB%E7%AF%87/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94/Bilateral-Branch%20Network%20with%20Cumulative%20Learning.md)
+
 
 # 网络篇
 1. [GCNet通过分析No-Local(Non-local Neural Networks)网络，实现发现No-Local网络用了大量的计算量来建立的特征长程关系，但是却发现通过No-local网络来建模的全局语义信息在不同的点上几乎是相同的。对于这一现象，作者进行了改进](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%BD%91%E7%BB%9C%E7%AF%87/GCNet.md)
