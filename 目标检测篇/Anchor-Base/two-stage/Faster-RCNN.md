@@ -76,4 +76,5 @@ Faster-RCNN分为RPN和RCNN两个部分，两个部分单独优化，RCNN部分�
 
 ### 7. 总结
 
-Faster-RCNN的作者从RCNN,Fast-RCNN一步一个脚印，做的工作非常扎实，RPN的提出使得网络能够完全以end-to-end的方式进行训练，anchor的提出为后来anchor-base系列的目标检测奠定了基础。现在各种主干网络，loss，FPN等提出使得Faster-RCNN在原来基础上又能够有一个很大的进步。
+Faster-RCNN的作者从RCNN,Fast-RCNN一步一个脚印，做的工作非常扎实，RPN的提出使得网络能够完全以end-to-end的方式进行训练，anchor的提出为后来anchor-base系列的目标检测奠定了基础。现在各种主干网络，loss，FPN等提出使得Faster-RCNN在原来基础上又能够有一个很大的进步。但是Faster RCNN还是存在一些问题，比如：
+- ROI后部分的网络参数不共享，每一个ROI都要进行一次运算，会增加运行时间，同时因为ROI的前部分都是共享参数的所以具有位置不敏感性，而后部分每一个ROI都独自运行一次所以具有位置不敏感性，其检测精度会较低。
