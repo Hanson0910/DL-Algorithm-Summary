@@ -2,8 +2,7 @@
 
 ## 概述：
 
-**R-FCN针对Faster-RCNN RPN后部分每一个ROI都要单独运行一次会加据网络运行时间，同时因为Faster-RCNN后部分全部为全连接层，会丢失位置敏感信息，R-FCN提出PS-ROI-Pooling层
-不需要每一个roi单独提取特征再进行全连接操作进行分类和回归，R-FCN是全卷积网络能够提升训练和测试阶段的检测速度。**
+**R-FCN提出PS-ROI-Pooling层不需要每一个roi单独提取特征再进行全连接操作进行分类和回归，R-FCN是全卷积网络能够提升训练和测试阶段的检测速度。**
 
 <div align=center>
 <img src="https://pic2.zhimg.com/v2-83c1bce928760858323224ba364e80a5_r.jpg"/>
