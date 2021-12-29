@@ -29,7 +29,7 @@
 </div>
 
 
-**如上图所示，作者发现，60%的难例出现在iou>0.05的情况下，而random sampling则仅提供30%的难例子。假设一共要选N个负例，其中总共有M个负例，那么在random sampling情况下每个样本选择的概率为P=N/M。为了提升难例的概率，按照iou均分成K个bin，要选的N个负例在K个bin里面是等概率的，如下式所示：**
+**如上图所示，作者发现，60%的难例出现在iou>0.05的情况下，而random sampling则仅提供30%的难例子。假设一共要选N个负例，其中总共有M个负例，那么在random sampling情况下每个样本选择的概率为P=N/M。为了提升难例的概率，按照iou均分成K个bin，要选的N个负例在K个bin里面是等概率的，如下式所示(MK表示在这个IOU区间内候选框的个数)：**
 
 <div align=center>
 <img src="https://note.youdao.com/yws/api/personal/file/WEB790070c45c9f09383e71eb255b14a582?method=download&shareKey=f5b1f6b0f8ef458301d7165d3f0fb332"/>
