@@ -112,16 +112,12 @@
 4. [BN,BN能够有效减小神经网络训练过程中产生的Internal Covariate Shift问题](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E4%BC%98%E5%8C%96%E7%AF%87/Batch-Normilize.md)
 
 # 竞赛篇
-#### Kaggle
-
-<div align=center>
-<img src="https://note.youdao.com/yws/api/personal/file/WEBfdbcdec88218d0ae4f0c39e8e0bad4c6?method=download&shareKey=547df1fa26838383496ff7f4a40ab081"/>
-</div>
-
+#### Kaggle 专家（竞赛排名827）
 1. [Kaggle 木薯叶疾病识别银牌，top1% 29/3900](https://www.kaggle.com/c/cassava-leaf-disease-classification)
-2. [Kaggle 化学结构式翻译，top4% 30/874](https://www.kaggle.com/c/bms-molecular-translation)
-3. [Kaggle shopee商品识别银牌，top5%,118/2426](https://www.kaggle.com/c/shopee-product-matching)
-4. [Kaggle 导管放置位置识别铜牌,top6%,99/1547](https://www.kaggle.com/c/ranzcr-clip-catheter-line-classification)
+2. [Kaggle 细胞实例分割银牌，top2% 17/1505](https://www.kaggle.com/c/sartorius-cell-instance-segmentation)
+3. [Kaggle 化学结构式翻译，top4% 30/874](https://www.kaggle.com/c/bms-molecular-translation)
+4. [Kaggle shopee商品识别银牌，top5%,118/2426](https://www.kaggle.com/c/shopee-product-matching)
+5. [Kaggle 导管放置位置识别铜牌,top6%,99/1547](https://www.kaggle.com/c/ranzcr-clip-catheter-line-classification)
 #### else
 1. [ISBI-2021 RIADD 视网膜疾病分类第一名](https://riadd.grand-challenge.org/evaluation/challenge/leaderboard/)
 <div align=center>
