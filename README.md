@@ -112,7 +112,7 @@
 4. [BN,BN能够有效减小神经网络训练过程中产生的Internal Covariate Shift问题](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E4%BC%98%E5%8C%96%E7%AF%87/Batch-Normilize.md)
 
 # 竞赛篇
-#### Kaggle 专家（竞赛排名827）
+#### Kaggle 专家（竞赛排名827/173155）
 1. [Kaggle 木薯叶疾病识别银牌，top1% 29/3900](https://www.kaggle.com/c/cassava-leaf-disease-classification)
 2. [Kaggle 细胞实例分割银牌，top2% 17/1505](https://www.kaggle.com/c/sartorius-cell-instance-segmentation)
 3. [Kaggle 化学结构式翻译，top4% 30/874](https://www.kaggle.com/c/bms-molecular-translation)
