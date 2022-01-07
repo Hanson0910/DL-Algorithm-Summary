@@ -86,6 +86,10 @@
 
 1. [RetinaTrack: Online Single Stage Joint Detection and Tracking，RetinaTrack主要解决检测区域高度重叠的时候导致实例特征混淆，从而在RetinaNet基础上对每一个anchor用一个单独的分支去负责预测，Task-Shared和Task-Specfic部分主要是为了在减小模型参数量的基础上提升多任务学习的精度](https://zhuanlan.zhihu.com/p/269571970)
 
+
+# 多任务篇
+1. [Yplop，You Only Look Once for Panoptic Driving Perception：yolop是一个多任务学习网络，在yolo4基础上添加了两个分割分支(车道线和道路)]()
+
 # Loss篇
 
 ## 分类Loss
