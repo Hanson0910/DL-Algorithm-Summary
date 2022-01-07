@@ -88,7 +88,7 @@
 
 
 # 多任务篇
-1. [Yplop，You Only Look Once for Panoptic Driving Perception：yolop是一个多任务学习网络，在yolo4基础上添加了两个分割分支(车道线和道路)](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%AF%87/yolop.md)
+1. [Yolop，You Only Look Once for Panoptic Driving Perception：yolop是一个多任务学习网络，在yolo4基础上添加了两个分割分支(车道线和道路)](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%AF%87/yolop.md)
 
 # Loss篇
 
