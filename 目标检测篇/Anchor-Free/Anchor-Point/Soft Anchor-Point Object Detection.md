@@ -22,7 +22,7 @@
 
 ### 2.3 Head:
 
-**FCOS Head部分分为两个分支：类别分支、回归分支**
+**Soft Anchor-Point Head部分分为两个分支：类别分支、回归分支**
 
 ### 2.4 Encode-Decode：
 
