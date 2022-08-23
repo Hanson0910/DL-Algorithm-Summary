@@ -129,10 +129,8 @@
 </div>
 
 # 工程应用篇
-
-1. [轻量级人脸检测MNN模型部署](https://github.com/Hanson0910/MNNFaceDetect)
-2. [libtorch多batch inference](https://zhuanlan.zhihu.com/p/386108526)
-3. [关键点匹配算法SuperGlue MNN C++部署](https://github.com/Hanson0910/MNNSuperGlue)
+1. [libtorch多batch inference](https://zhuanlan.zhihu.com/p/386108526)
+2. [关键点匹配算法SuperGlue MNN C++部署](https://github.com/Hanson0910/MNNSuperGlue)
 
 # Tips
 最近换工作，没来得及更新，马上回来~~~~
