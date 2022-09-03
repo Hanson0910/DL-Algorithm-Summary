@@ -65,6 +65,7 @@
 
 # 网络篇
 1. [GCNet通过分析No-Local(Non-local Neural Networks)网络，实现发现No-Local网络用了大量的计算量来建立的特征长程关系，但是却发现通过No-local网络来建模的全局语义信息在不同的点上几乎是相同的。对于这一现象，作者进行了改进](https://github.com/Hanson0910/DL-Algorithm-Summary/blob/main/%E7%BD%91%E7%BB%9C%E7%AF%87/GCNet.md)
+2. [Vison Transformer，transformer框架统一了NLP和CV两个任务，使视觉和自然语言两个任务融合更加容易。transformer较CNN有更好的全局性, transformer结构很容扩展其大小，NLP领域中超大参数的transformer结构在超大数据集上训练后可供下游任务finetune取得很好的效果。CV上transformer同样具有相同的优势。](https://zhuanlan.zhihu.com/p/560008151)
 
 
 # 分割篇
